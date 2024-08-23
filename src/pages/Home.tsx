@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center my-40 gap-2">
-      <h1 className="text-3xl">Welcome to Store Admin</h1>
+      <h1 className="text-3xl">Welcome to Store101 Admin</h1>
 
       <div className="flex gap-4">
         <Link
