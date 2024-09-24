@@ -13,7 +13,7 @@ const AddProduct = () => {
     category: "",
     image: "",
     rate: 0,
-    review: 0,
+    reviews: 0,
   });
   const [imageFile, setImageFile] = useState<File | null>(null);
 
@@ -45,7 +45,7 @@ const AddProduct = () => {
       formData.append("category", product.category);
       formData.append("image", imageFile);
       formData.append("rate", product.rate.toString());
-      formData.append("review", product.review.toString());
+      formData.append("reviews", product.reviews.toString());
 
       await addProduct(formData);
       setProduct({
@@ -55,7 +55,7 @@ const AddProduct = () => {
         category: "",
         image: "",
         rate: 0,
-        review: 0,
+        reviews: 0,
       });
       setImageFile(null);
 
@@ -147,11 +147,11 @@ const AddProduct = () => {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="rate">Reviews</label>
+          <label htmlFor="reviews">Reviews</label>
           <input
             type="number"
-            name="review"
-            value={product.review}
+            name="reviews"
+            value={product.reviews}
             onChange={handleChange}
             placeholder="Product reviews"
             className="border border-gray p-2 focus:outline-primaryColor rounded-md"
