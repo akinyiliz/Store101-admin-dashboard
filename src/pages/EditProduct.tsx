@@ -15,6 +15,8 @@ const UpdateProduct = () => {
     description: "",
     category: "",
     image: "",
+    rate: 0,
+    reviews: 0,
   });
 
   const navigate = useNavigate();
@@ -28,6 +30,8 @@ const UpdateProduct = () => {
         description: productToEdit.description || "",
         category: productToEdit.category || "",
         image: productToEdit.image || "",
+        rate: productToEdit.rate || 0,
+        reviews: productToEdit.reviews || 0,
       });
     }
   }, [id, products]);
@@ -121,6 +125,30 @@ const UpdateProduct = () => {
             type="file"
             name="image"
             onChange={handleFileChange}
+            className="border border-gray p-2 focus:outline-primaryColor rounded-md"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="rate">Rating</label>
+          <input
+            type="number"
+            name="rate"
+            value={product.rate || 0}
+            onChange={handleChange}
+            placeholder="Product rating"
+            className="border border-gray p-2 focus:outline-primaryColor rounded-md"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="reviews">Reviews</label>
+          <input
+            type="number"
+            name="reviews"
+            value={product.reviews || 0}
+            onChange={handleChange}
+            placeholder="Product reviews"
             className="border border-gray p-2 focus:outline-primaryColor rounded-md"
           />
         </div>
