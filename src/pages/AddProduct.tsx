@@ -110,9 +110,10 @@ const AddProduct = () => {
             className="border border-gray p-2 focus:outline-primaryColor rounded-md"
           >
             <option value="">Select Product Category</option>
-            <option value="necklace">Necklace</option>
-            <option value="earrings">Earrings</option>
-            <option value="bracelet">Bracelet</option>
+            <option value="men's clothing">Men's clothing</option>
+            <option value="women's clothing">Women's clothing</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="electronics">Electronics</option>
           </select>
         </div>
 
