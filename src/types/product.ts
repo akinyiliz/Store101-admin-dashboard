@@ -6,5 +6,5 @@ export interface Product {
   category?: string;
   image: string;
   rate?: number;
-  review?: number;
+  reviews?: number;
 }
