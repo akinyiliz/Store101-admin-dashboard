@@ -12,6 +12,8 @@ const AddProduct = () => {
     description: "",
     category: "",
     image: "",
+    rate: 0,
+    review: 0,
   });
   const [imageFile, setImageFile] = useState<File | null>(null);
 
@@ -42,6 +44,8 @@ const AddProduct = () => {
       formData.append("description", product.description);
       formData.append("category", product.category);
       formData.append("image", imageFile);
+      formData.append("rate", product.rate.toString());
+      formData.append("review", product.review.toString());
 
       await addProduct(formData);
       setProduct({
@@ -50,6 +54,8 @@ const AddProduct = () => {
         description: "",
         category: "",
         image: "",
+        rate: 0,
+        review: 0,
       });
       setImageFile(null);
 
@@ -124,6 +130,30 @@ const AddProduct = () => {
             name="image"
             onChange={handleFileChange}
             placeholder="Image URL"
+            className="border border-gray p-2 focus:outline-primaryColor rounded-md"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="rate">Rating</label>
+          <input
+            type="number"
+            name="rate"
+            value={product.rate}
+            onChange={handleChange}
+            placeholder="Product rating"
+            className="border border-gray p-2 focus:outline-primaryColor rounded-md"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="rate">Reviews</label>
+          <input
+            type="number"
+            name="review"
+            value={product.review}
+            onChange={handleChange}
+            placeholder="Product reviews"
             className="border border-gray p-2 focus:outline-primaryColor rounded-md"
           />
         </div>
